@@ -21,7 +21,7 @@ namespace Repository.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TesteDTO>().ToTable("Teste");
-
+            modelBuilder.Entity<TesteDTO>().ToTable("aluno");
         }
     }
 }

@@ -21,7 +21,7 @@ namespace Repository.Repositories
             using (var scope = new TransactionScope())
             {
                 var teste = _context.TesteDTO.Where(l => l.id == 1).FirstOrDefault();
-
+                // _context.Update(teste);
                 return teste.descricao;
             }
         }

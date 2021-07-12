@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "QEth2REMNG9BM+ECQb8UafB8InUqQ9+wtOx2VKwGuwIO9x+Uzf/OX/oHCqTCX5sFlTzeekE5HIcCYKyMWFHL2g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Usuario\\Desktop\\CURSO DE FERIAS\\WebApi\\Presentation\\Presentation.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}
