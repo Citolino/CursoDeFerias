@@ -12,7 +12,7 @@ namespace Repository.Context
         {
         }
         public DbSet<TesteDTO> TesteDTO { get; set; }
-
+        public DbSet<AlunoDTO> Aluno { get; set; }
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
         //    optionsBuilder.UseSqlServer(@"Data Source=.\;Initial Catalog=Estudo;Integrated Security=True");
@@ -21,7 +21,7 @@ namespace Repository.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TesteDTO>().ToTable("Teste");
-            modelBuilder.Entity<TesteDTO>().ToTable("aluno");
+            modelBuilder.Entity<AlunoDTO>().ToTable("aluno");
         }
     }
 }

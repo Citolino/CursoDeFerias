@@ -1,0 +1,95 @@
+﻿@model IEnumerable<AlunoDTO>
+
+@using System.Text;
+@{
+
+    ViewBag.Title = "Consulta de Alunos";
+}
+
+<div class="alert alert-success " hidden  id="msgSucesso">
+
+</div>
+<div class="alert alert-danger " hidden id="msgErro">
+   
+</div>
+<br />
+<hr />
+<legend> Lista de Alunos</legend>
+
+<br />
+<hr />
+<table class="table" id="tbl-aluno">
+    <thead>
+        <tr>
+            <th>Excluir</th>
+            <th>Alterar</th>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>Email</th>
+            <th>Data Nascimento</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td><a  onclick="excluirAluno('@item.id')" title="Excluir">&#10006;</a></td>
+                <td><a  title="Alterar">&#9998;</a></td>
+                <td>@item.nome</td>
+                <td>@item.sobrenome</td>
+                <td>@item.email</td>
+                <td>@item.dt_nascimento.Value.ToShortDateString()</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+<hr />
+
+<script>
+    $("#tbl-aluno").DataTable({
+        pageLength: 15,
+        lengthMenu: [
+            [15, 25, 50, 100, -1],
+            [15, 25, 50, 100, "Todos"]
+        ]
+    });
+
+    function excluirAluno(IdAluno) {
+        
+         $.ajax({
+            url: '@Url.Action("excluirAluno", "Aluno")',
+             data: {
+                 id: IdAluno
+             },
+             dataType: "Json",
+            method: "POST",
+             success: function (data) {
+               
+                if (!data.status) {
+
+                    $('#msgErro').html(data.mensagem);
+                    $('#msgErro').removeAttr("hidden");
+                } else {
+                    $('#msgSucesso').html(data.mensagem);
+                    $('#msgSucesso').removeAttr("hidden");
+
+                    setTimeout(function () {
+                        location.reload();
+                    }, 6000)
+                }
+
+
+            },
+             error: function (response) {
+                 console.log(response);
+            }
+        });
+
+    }
+</script>
+
+
+

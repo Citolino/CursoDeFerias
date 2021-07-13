@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "s8zO3AGdsnf+/U+RCtnNDPx3j0j32/jZtPeJt0P6/CiCkz86eDH9bZc3q4rSVUlDqZJZAYB+s1jAWyDd43lAgA==",
+  "dgSpecHash": "8Q1lLYWqGCaa4ia5JCtH3wKhke4HkK+JGjhAdFK8F1Xjr58t7f4NXj+pJhKZt///B+mk9cKJTtXIL8y65ie/4g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Usuario\\Desktop\\CURSO DE FERIAS\\WebApi\\Repository\\Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuario\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\jquery\\3.6.0\\jquery.3.6.0.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\jquery.datatables\\1.10.15\\jquery.datatables.1.10.15.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\jquery.validation\\1.19.3\\jquery.validation.1.19.3.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",

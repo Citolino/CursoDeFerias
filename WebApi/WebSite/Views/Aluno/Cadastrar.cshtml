@@ -1,0 +1,97 @@
+﻿@model AlunoDTO
+
+@using System.Text;
+@{
+
+    ViewBag.Title = "Consulta de Alunos";
+}
+<div class="alert alert-success " hidden id="msgSucesso"></div>
+<div class="alert alert-danger " hidden id="msgErro"></div>
+@if (TempData["Erro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["Erro"].ToString()
+    </div>
+}
+<div class="text-center">
+    @*action="CadastrarAluno" method="post"*@
+    <form action="CadastrarAluno" method="post">
+ 
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <br />
+            <input id="nome"  name="nome" type="text" size="35" required>
+        </div>
+
+        <div class="form-group">
+            <label for="sobrenome">Sobrenome:</label>
+            <br />
+            <input id="sobrenome" name="sobrenome" type="text" size="35" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <br />
+            <input type="email" name="email" id="email" size="35" placeholder="exemple@exemple.com" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Data Nascimento</label>
+            <br />
+            <input id="dt_nascimento" name="dt_nascimento" type="date" required>
+        </div>
+
+
+        <input type="submit" id="cadastrar" class="btn btn-dark" value="Cadastrar" />
+        <input type="button" id="cadastrarAjax" class="btn btn-dark" value="Cadastrar Ajax" />
+        <input id="id" name="id" hidden>
+    </form>
+
+</div>
+
+<script>
+
+
+     $('#cadastrarAjax').click(function () {
+
+        var alunoCadastro = {
+            nome : $('#nome').val(),
+            sobrenome : $('#sobrenome').val(),
+            email : $('#email').val(),
+            dt_nascimento : $('#dt_nascimento').val()
+        }
+         $.ajax({
+            url: '@Url.Action("CadastrarAlunoAjax", "Aluno")',
+             data: {
+                 aluno: alunoCadastro
+             }
+             ,
+             dataType:'json',
+            method: "POST",
+             success: function (data) {
+
+                if (!data.status) {
+
+                    $('#msgErro').html(data.mensagem);
+                    $('#msgErro').removeAttr("hidden");
+                    setTimeout(function () {
+                        location.reload();
+                    }, 3000)
+                } else {
+                    $('#msgSucesso').html(data.mensagem);
+                    $('#msgSucesso').removeAttr("hidden");
+
+                    setTimeout(function () {
+                        location.reload();
+                    }, 3000)
+                }
+
+
+            },
+             error: function (response) {
+                 console.log(response);
+            }
+        });
+
+    });
+
+</script>

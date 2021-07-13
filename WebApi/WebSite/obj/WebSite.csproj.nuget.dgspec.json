@@ -46,9 +46,25 @@
               "target": "Package",
               "version": "[3.1.0, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "bootstrap": {
               "target": "Package",
               "version": "[5.0.2, )"
+            },
+            "jQuery": {
+              "target": "Package",
+              "version": "[3.6.0, )"
+            },
+            "jQuery.Validation": {
+              "target": "Package",
+              "version": "[1.19.3, )"
+            },
+            "jquery.datatables": {
+              "target": "Package",
+              "version": "[1.10.15, )"
             }
           },
           "imports": [

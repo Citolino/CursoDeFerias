@@ -30,6 +30,9 @@
           "Microsoft.EntityFrameworkCore.Tools": "5.0.7",
           "Repository": "1.0.0",
           "Swashbuckle.AspNetCore": "6.1.4",
+          "jQuery": "3.6.0",
+          "jQuery.Validation": "1.19.3",
+          "jquery.datatables": "1.10.15",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -314,6 +317,17 @@
             "assemblyVersion": "2.8.0.0",
             "fileVersion": "2.8.26.1919"
           }
+        }
+      },
+      "jQuery/3.6.0": {},
+      "jquery.datatables/1.10.15": {
+        "dependencies": {
+          "jQuery": "3.6.0"
+        }
+      },
+      "jQuery.Validation/1.19.3": {
+        "dependencies": {
+          "jQuery": "3.6.0"
         }
       },
       "Microsoft.CSharp/4.7.0": {},
@@ -1455,7 +1469,10 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "5.0.7",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7",
-          "Swashbuckle.AspNetCore": "6.1.4"
+          "Swashbuckle.AspNetCore": "6.1.4",
+          "jQuery": "3.6.0",
+          "jQuery.Validation": "1.19.3",
+          "jquery.datatables": "1.10.15"
         },
         "runtime": {
           "DomainModel.dll": {}
@@ -1469,7 +1486,10 @@
           "DomainModel": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.7",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7",
-          "Swashbuckle.AspNetCore": "6.1.4"
+          "Swashbuckle.AspNetCore": "6.1.4",
+          "jQuery": "3.6.0",
+          "jQuery.Validation": "1.19.3",
+          "jquery.datatables": "1.10.15"
         },
         "runtime": {
           "Repository.dll": {}
@@ -3112,6 +3132,27 @@
       "sha512": "sha512-OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
       "path": "humanizer.core/2.8.26",
       "hashPath": "humanizer.core.2.8.26.nupkg.sha512"
+    },
+    "jQuery/3.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sSzCTDWn15waSMjDrP21jjgG1j1pwISLaKiVCClwU4XGAmuZt+FScLkdyRvh9ppoIxAW/tJtJBYei+3CAwFQ7g==",
+      "path": "jquery/3.6.0",
+      "hashPath": "jquery.3.6.0.nupkg.sha512"
+    },
+    "jquery.datatables/1.10.15": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9zRZ5zYafJHOwLU6sWoTM/agRx/dlu0HGQpGD/hEvqSEUJhSQjqJNTq77I97B+LCbh4eJrmNDS9PENiYY+0Isg==",
+      "path": "jquery.datatables/1.10.15",
+      "hashPath": "jquery.datatables.1.10.15.nupkg.sha512"
+    },
+    "jQuery.Validation/1.19.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Y9oA2cqUyuJYd+egyp/2VwsUT4mH1X31R7i74VTm1i/7XhnSK0iAWsPvQBXxXz6BhOnEDhAQ0u12Aj830/e1YA==",
+      "path": "jquery.validation/1.19.3",
+      "hashPath": "jquery.validation.1.19.3.nupkg.sha512"
     },
     "Microsoft.CSharp/4.7.0": {
       "type": "package",

@@ -59,6 +59,18 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.1.4, )"
+            },
+            "jQuery": {
+              "target": "Package",
+              "version": "[3.6.0, )"
+            },
+            "jQuery.Validation": {
+              "target": "Package",
+              "version": "[1.19.3, )"
+            },
+            "jquery.datatables": {
+              "target": "Package",
+              "version": "[1.10.15, )"
             }
           },
           "imports": [
@@ -152,6 +164,18 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.1.4, )"
+            },
+            "jQuery": {
+              "target": "Package",
+              "version": "[3.6.0, )"
+            },
+            "jQuery.Validation": {
+              "target": "Package",
+              "version": "[1.19.3, )"
+            },
+            "jquery.datatables": {
+              "target": "Package",
+              "version": "[1.10.15, )"
             }
           },
           "imports": [

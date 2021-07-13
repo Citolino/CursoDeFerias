@@ -35,7 +35,8 @@ namespace WebApi
             services.AddControllers();
             services.AddTransient<IDomainTeste, DomainTeste>();
             services.AddTransient<IRepositoryTeste, RepositoryTeste>();
-
+            services.AddTransient<IDomainAluno, DomainAluno>();
+            services.AddTransient<IRepositoryAluno, RepositoryAluno>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Curso de férias", Version = "v1" });

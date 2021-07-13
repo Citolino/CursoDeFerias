@@ -348,6 +348,9 @@ C:\Users\Usuario\Desktop\CURSO DE FERIAS\WebApi\WebSite\bin\Debug\netcoreapp3.1\
 C:\Users\Usuario\Desktop\CURSO DE FERIAS\WebApi\WebSite\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\Usuario\Desktop\CURSO DE FERIAS\WebApi\WebSite\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\Usuario\Desktop\CURSO DE FERIAS\WebApi\WebSite\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Usuario\Desktop\CURSO DE FERIAS\WebApi\WebSite\obj\Debug\netcoreapp3.1\Razor\Views\Aluno\Consultar.cshtml.g.cs
+C:\Users\Usuario\Desktop\CURSO DE FERIAS\WebApi\WebSite\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\Usuario\Desktop\CURSO DE FERIAS\WebApi\WebSite\obj\Debug\netcoreapp3.1\WebSite.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Desktop\CURSO DE FERIAS\WebApi\WebSite\obj\Debug\netcoreapp3.1\WebSite.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Usuario\Desktop\CURSO DE FERIAS\WebApi\WebSite\obj\Debug\netcoreapp3.1\WebSite.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Usuario\Desktop\CURSO DE FERIAS\WebApi\WebSite\obj\Debug\netcoreapp3.1\Razor\Views\Aluno\Cadastrar.cshtml.g.cs
