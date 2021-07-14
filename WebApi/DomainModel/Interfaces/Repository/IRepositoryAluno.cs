@@ -9,5 +9,10 @@ namespace DomainModel.Interfaces.Repository
     {
         List<AlunoDTO> GetAll();
         void deleteById(int id);
+
+        void salvarAluno(AlunoDTO aluno);
+
+        AlunoDTO GetById(int Id);
+        void AlterarAluno(AlunoDTO aluno);
     }
 }

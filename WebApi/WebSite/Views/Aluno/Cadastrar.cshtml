@@ -16,34 +16,43 @@
 <div class="text-center">
     @*action="CadastrarAluno" method="post"*@
     <form action="CadastrarAluno" method="post">
- 
+
         <div class="form-group">
             <label for="nome">Nome:</label>
             <br />
-            <input id="nome"  name="nome" type="text" size="35" required>
+            <input  id="nome" name="nome" type="text" size="35" asp-for="nome" required >
         </div>
 
         <div class="form-group">
             <label for="sobrenome">Sobrenome:</label>
             <br />
-            <input id="sobrenome" name="sobrenome" type="text" size="35" required>
+            <input id="sobrenome" asp-for="sobrenome" name="sobrenome" type="text" size="35" required>
         </div>
         <div class="form-group">
             <label for="email">Email:</label>
             <br />
-            <input type="email" name="email" id="email" size="35" placeholder="exemple@exemple.com" required>
+            <input type="email" asp-for="email" name="email" id="email" size="35" placeholder="exemple@exemple.com" required>
         </div>
 
         <div class="form-group">
             <label for="email">Data Nascimento</label>
             <br />
-            <input id="dt_nascimento" name="dt_nascimento" type="date" required>
+            <input id="dt_nascimento" asp-for="dt_nascimento" name="dt_nascimento" type="date" required>
         </div>
 
 
-        <input type="submit" id="cadastrar" class="btn btn-dark" value="Cadastrar" />
-        <input type="button" id="cadastrarAjax" class="btn btn-dark" value="Cadastrar Ajax" />
-        <input id="id" name="id" hidden>
+
+        @if (Model != null && Model.fl_update)
+        {
+            <input type="submit" id="alterar" class="btn btn-dark" value="Alterar" />
+        }
+        else
+        {
+            <input type="button" id="cadastrarAjax" class="btn btn-dark" value="Cadastrar Ajax" />
+            <input type="submit" id="cadastrar" class="btn btn-dark" value="Cadastrar" />
+        }
+
+        <input  id="id" asp-for="id" name="id" hidden>
     </form>
 
 </div>

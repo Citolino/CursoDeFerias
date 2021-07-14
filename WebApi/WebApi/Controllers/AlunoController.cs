@@ -49,5 +49,53 @@ namespace WebApi.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpPost]
+       // [Route("DeleteById/{Id}")]
+        public IActionResult Post(AlunoDTO aluno)
+        {
+            try
+            {
+                _domAluno.salvarAluno(aluno);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("GetById/{Id}")]
+        public ActionResult<AlunoDTO> GetById(int Id)
+        {
+            try
+            {
+                return Ok(_domAluno.GetById(Id));
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPut]
+        // [Route("DeleteById/{Id}")]
+        public IActionResult Put(AlunoDTO aluno)
+        {
+            try
+            {
+                _domAluno.AlterarAluno(aluno);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+        }
+
     }
 }

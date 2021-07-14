@@ -35,7 +35,7 @@
             <tr>
 
                 <td><a  onclick="excluirAluno('@item.id')" title="Excluir">&#10006;</a></td>
-                <td><a  title="Alterar">&#9998;</a></td>
+                <td><a  href="AlterarAluno?Id=@item.id" title="Alterar">&#9998;</a></td>
                 <td>@item.nome</td>
                 <td>@item.sobrenome</td>
                 <td>@item.email</td>
@@ -58,7 +58,7 @@
     });
 
     function excluirAluno(IdAluno) {
-        
+
          $.ajax({
             url: '@Url.Action("excluirAluno", "Aluno")',
              data: {
@@ -67,7 +67,7 @@
              dataType: "Json",
             method: "POST",
              success: function (data) {
-               
+
                 if (!data.status) {
 
                     $('#msgErro').html(data.mensagem);
@@ -89,6 +89,40 @@
         });
 
     }
+
+
+     @*function alterarAluno(IdAluno) {
+
+         $.ajax({
+            url: '@Url.Action("AlterarAluno", "Aluno")',
+             data: {
+                 id: IdAluno
+             },
+             dataType: "Json",
+            method: "POST",
+             success: function (data) {
+
+                if (!data.status) {
+
+                    $('#msgErro').html(data.mensagem);
+                    $('#msgErro').removeAttr("hidden");
+                } else {
+                    $('#msgSucesso').html(data.mensagem);
+                    $('#msgSucesso').removeAttr("hidden");
+
+                    setTimeout(function () {
+                        location.reload();
+                    }, 6000)
+                }
+
+
+            },
+             error: function (response) {
+                 console.log(response);
+            }
+        });
+
+    }*@
 </script>
 
 

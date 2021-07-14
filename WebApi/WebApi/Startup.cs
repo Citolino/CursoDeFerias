@@ -33,16 +33,21 @@ namespace WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            //INJEÇÃO DE DEPENDENCIA
             services.AddTransient<IDomainTeste, DomainTeste>();
             services.AddTransient<IRepositoryTeste, RepositoryTeste>();
             services.AddTransient<IDomainAluno, DomainAluno>();
             services.AddTransient<IRepositoryAluno, RepositoryAluno>();
+
+            //ADICIONANDO O SWAGGER OPCIONAL
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Curso de férias", Version = "v1" });
 
             });
 
+            //ADICIONANDO A CONEXÃO COM O BANCO PARA O ENTITY
             services.AddEntityFrameworkSqlServer().AddDbContext<Context>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllersWithViews();
@@ -51,6 +56,7 @@ namespace WebApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            //AMBIENTE DE DESENVOLVIMENTO E PUBLICADO ROTA
             app.UseSwagger();
             if (env.IsDevelopment())
             {

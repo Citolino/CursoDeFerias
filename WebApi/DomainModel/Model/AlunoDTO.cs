@@ -8,7 +8,7 @@ namespace DomainModel.Model
     [Table("aluno")]
     public class AlunoDTO
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
         public string nome { get; set; }
         public string sobrenome { get; set; }

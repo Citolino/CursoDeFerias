@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -34,9 +35,7 @@ namespace WebSite.Controllers
             try
             {
 
-                //var json = JsonConvert.SerializeObject(refund);
-                //var conteudo = new StringContent(json, Encoding.UTF8, "application/json");
-                //var resposta = await cliente.PostAsync(URL_INSERE_REEMBOLSO, conteudo);
+               
 
                 string url = string.Format("https://localhost:44355/api/aluno/DeleteById/{0}", id);
                 var resposta = await cliente.DeleteAsync(url);
@@ -62,15 +61,36 @@ namespace WebSite.Controllers
 
         public IActionResult Cadastrar()
         {
-            return View();
+         
+            return View(new AlunoDTO());
         }
       
-        public IActionResult CadastrarAluno(AlunoDTO aluno)
+        public async Task<IActionResult> CadastrarAluno(AlunoDTO aluno)
         {
             try
             {
-                throw new Exception("erro para cadastrar");
-              
+                HttpResponseMessage resposta = new HttpResponseMessage(); ;
+                if(aluno.id > 0) 
+                {
+                    var json = JsonConvert.SerializeObject(aluno);
+                    var conteudo = new StringContent(json, Encoding.UTF8, "application/json");
+                    resposta = await cliente.PutAsync("https://localhost:44355/api/aluno", conteudo);
+                }
+                else
+                {
+                    var json = JsonConvert.SerializeObject(aluno);
+                    var conteudo = new StringContent(json, Encoding.UTF8, "application/json");
+                    resposta = await cliente.PostAsync("https://localhost:44355/api/aluno", conteudo);
+
+                }
+
+                if (resposta.StatusCode == HttpStatusCode.OK)
+                {
+                    return RedirectToAction("Consultar");
+                }
+                else
+                    throw new Exception(resposta.Content.ReadAsStringAsync().Result);
+                
             }
             catch (Exception ex)
             {
@@ -124,6 +144,31 @@ namespace WebSite.Controllers
             }
         
            
+        }
+
+        public async Task<IActionResult> AlterarAluno(int Id)
+        {
+            try
+            {
+                HttpResponseMessage resposta = new HttpResponseMessage(); ;
+                resposta = await cliente.GetAsync(string.Format("https://localhost:44355/api/aluno/GetById/{0}",Id));
+
+                if (resposta.StatusCode == HttpStatusCode.OK)
+                {
+                   AlunoDTO aluno = JsonConvert.DeserializeObject<AlunoDTO>(resposta.Content.ReadAsStringAsync().Result);
+                    aluno.fl_update = true;
+                    return View("Cadastrar",aluno);
+                }
+                else
+                    throw new Exception(resposta.Content.ReadAsStringAsync().Result);
+
+            }
+            catch (Exception ex)
+            {
+                TempData["Erro"] = ex.Message;
+                return View("Cadastrar");
+            }
+
         }
     }
 }
